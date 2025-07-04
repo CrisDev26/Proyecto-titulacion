@@ -4,26 +4,27 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-right: 1px solid var(--gray-200);
 }
 
+
 .logo {
-  padding: 1.5rem 1rem;
-  font-weight: 800;
-  font-size: 1.2rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  padding: 10px 10px;
   border-bottom: 1px solid var(--gray-200);
-  color: var(--primary);
+  display: flex;
+  align-items: center;
+  min-height: 50px; /* Puedes ajustar esto si quieres un área más grande */
 }
 
-.logo i {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
+.logo img {
+    height: 50px;
+    margin-top: 10px;
+    width: auto;
+    display: block;
 }
+
+
 
 nav ul {
   list-style: none;
