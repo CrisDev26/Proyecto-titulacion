@@ -1,0 +1,57 @@
+<div class="p-4">
+  <h3 class="mb-4" mat-dialog-title>Más Información</h3>
+
+  <div mat-dialog-content>
+    <form [formGroup]="usuarioForm">
+      <!-- Tipo de contrato -->
+      <div class="mb-3">
+        <input
+          type="text"
+          id="Tipo Contrato"
+          class="form-control"
+          formControlName="Tipo Contrato"
+          readonly
+        />
+      </div>
+
+      <!-- Dedicacion -->
+      <div class="mb-3">
+        <input
+          type="text"
+          id="Dedicacion"
+          class="form-control"
+          formControlName="Dedicacion"
+          readonly
+        />
+      </div>
+
+      <!-- Contraseña?
+      <div class="mb-3">
+        <input
+          type="text"
+          id="Contraseña"
+          class="form-control"
+          formControlName="Contraseña"
+          required
+        />
+      </div>
+
+      Fecha de creacion
+      <div class="mb-3">
+        <input
+          type="email"
+          id="Fecha de creación"
+          class="form-control"
+          formControlName="Fecha de creación"
+          required
+        />
+      </div> -->
+
+      <div mat-dialog-actions class="d-flex justify-content-end gap-2">
+        <button mat-button (click)="onClose()" class="btn btn-secondary">
+          Salir
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

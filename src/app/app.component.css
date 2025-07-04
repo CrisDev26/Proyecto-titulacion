@@ -1,0 +1,9 @@
+/* Asegúrate que el navbar tenga un alto conocido */
+app-navbar {
+  height: 60px;
+}
+
+/* Hace que el sidebar ocupe todo el alto de la pantalla */
+app-sidebar {
+  height: 100%;
+}

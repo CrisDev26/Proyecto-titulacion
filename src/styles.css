@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  /* === Brand Colors === */
+  --accent-gold: #ef7b45;
+  --primary-blue: #0052a2;
+  --secondary-blue: #007bff;
+
+  /* === Base Colors === */
+  --dark: #5a5c69;
+  --dark-gray: #2c3e50;
+  --light: #f8f9fc;
+  --light-gray: #bdd6f5;
+
+  /* === Functional Colors === */
+  --danger: #e74a3b;
+  --info: #36b9cc;
+  --secondary: #858796;
+  --success: #1cc88a;
+  --warning: #f6c23e;
+
+  /* === Primary Variants === */
+  --primary: #4e73df;
+  --primary-dark: #2e59d9;
+
+  /* === Gray Scale === */
+  --gray-100: #f8f9fc;
+  --gray-200: #eaecf4;
+  --gray-300: #dddfeb;
+  --gray-400: #d1d3e2;
+  --gray-500: #b7b9cc;
+  --gray-600: #858796;
+  --gray-700: #6e707e;
+  --gray-800: #5a5c69;
+  --gray-900: #3a3b45;
+}

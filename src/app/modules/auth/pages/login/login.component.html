@@ -1,0 +1,40 @@
+<section>
+    <div class="login-container">
+      <div class="logo-container-image" #logoContainer>
+        <img
+          src="assets/images/logo-facultad-fcmf.jpg"
+          alt="logo-facultad"
+          class="main-logo"
+        />
+      </div>
+      <h2 class="login-title" #loginTitle>Acceso al Sistema</h2>
+  
+      <form>
+        <div class="input-group" #inputGroup>
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            placeholder="Usuario"
+            required
+          />
+        </div>
+  
+        <div class="input-group" #inputGroup>
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+  
+        <button routerLink="/admin" class="login-btn">
+          INGRESAR
+        </button>
+  
+        <div class="login-footer" #loginFooter>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+      </form>
+    </div>
+  </section>

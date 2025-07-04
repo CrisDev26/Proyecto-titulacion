@@ -1,0 +1,48 @@
+<div class="sidebar">
+  <div class="logo">
+    <i class="fas fa-graduation-cap"></i>
+    <span>Modelo SISTI</span>
+  </div>
+
+  <nav>
+    <ul>
+      <li class="dropdown" [class.open]="isAdminOpen">
+        <div class="dropdown-toggle" (click)="toggleAdminMenu()">
+          <i class="fas fa-cogs"></i>
+          Administración
+          <i class="fas fa-chevron-down chevron"></i>
+        </div>
+        <ul class="submenu">
+          <li routerLink="docente-crud">
+            <i class="fas fa-users"></i> Usuarios
+          </li>
+          <li (click)="navigateTo('Areas')">
+            <i class="fas fa-book"></i> Areas
+          </li>
+          <li (click)="navigateTo('paralelos')">
+            <i class="fas fa-layer-group"></i> Paralelos
+          </li>
+        </ul>
+      </li>
+
+      <li (click)="navigateTo('horarios')">
+        <i class="fas fa-calendar-alt"></i> Horarios
+      </li>
+
+      <li (click)="navigateTo('roles')">
+        <i class="fas fa-user-tag"></i> Roles
+      </li>
+    </ul>
+  </nav>
+
+  <div class="user-profile">
+    <img
+      src="https://ui-avatars.com/api/?name=Admin&background=4e73df&color=fff"
+      alt="User"
+    />
+    <div>
+      <span class="name">Administrador</span>
+      <span class="role">Admin</span>
+    </div>
+  </div>
+</div>

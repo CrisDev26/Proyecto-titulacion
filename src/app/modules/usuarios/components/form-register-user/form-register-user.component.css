@@ -1,0 +1,14 @@
+.p-4 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* O cualquier valor */
+  max-height: 80vh; /* O cualquier valor */
+  max-width: 90vh;
+  overflow-y: scroll; /* o scroll */
+  z-index: 1000; /* Para asegurar que esté por encima de otros elementos */
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+}

@@ -1,0 +1,17 @@
+<!-- Navbar fija arriba -->
+<app-navbar class="position-fixed top-0 start-0 w-100 z-3"></app-navbar>
+
+<!-- Contenedor general debajo del navbar -->
+<div class="container-fluid" style="padding-top: 60px;"> <!-- ajusta el padding-top según el alto del navbar -->
+  <div class="row">
+    <!-- Sidebar a la izquierda -->
+    <div class="col-12 col-md-3 col-lg-2 bg-light min-vh-100 border-end">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <!-- Contenido de las rutas -->
+    <div class="col-12 col-md-9 col-lg-10 p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

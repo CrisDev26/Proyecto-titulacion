@@ -1,0 +1,86 @@
+<header class="main-header">
+  <div class="header-container">
+    <img src="assets/images/logoFCMF.png" alt="Logo" class="logo" />
+    <h1 class="header-title">
+      Sistema Integrado De Carrera - Tecnología De La Información
+    </h1>
+  </div>
+</header>
+
+<main class="systems-container">
+  <div class="systems-grid">
+    <div class="system-card">
+      <img src="assets/images/users-group.svg" alt="" />
+      <h2>Sistema de Coevaluadores</h2>
+      <p>Plataforma para la evaluación de docentes</p>
+      <button routerLink="/auth" class="btn">Acceder</button>
+    </div>
+
+    <div class="system-card">
+      <img src="assets/images/network-wired.svg" alt="" />
+      <h2>Matriz de Teletrabajo</h2>
+      <p>Gestión y seguimiento de actividades de teletrabajo</p>
+      <button routerLink="/login" class="btn">Acceder</button>
+    </div>
+
+    <div class="system-card">
+      <img src="assets/images/graduation-cap.svg" alt="" />
+      <h2>Titulación</h2>
+      <p>Sistema integrado de gestión de procesos de titulación</p>
+      <button routerLink="/login" class="btn">Acceder</button>
+    </div>
+
+    <div class="system-card">
+      <img src="assets/images/heart-pulse.svg" alt="" />
+      <h2>Bienestar Estudiantil</h2>
+      <p>Plataforma de apoyo y servicios para estudiantes</p>
+      <button routerLink="/login" class="btn">Acceder</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <h3>Enlaces Rápidos</h3>
+    <p>
+      <a href="#" target="_blank">Biblioteca Virtual</a>
+    </p>
+    <p>
+      <a href="#" target="_blank">Aula Virtual</a>
+    </p>
+    <p>
+      <a href="#" target="_blank">Reglamentos</a>
+    </p>
+  </div>
+
+  <div class="foot-line">
+    <p>
+      © 2024 Carrera de Tecnología de la Información - Todos los derechos
+      reservados
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Efecto smooth scroll para los enlaces
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  // Animación al hacer scroll
+  window.addEventListener("scroll", function () {
+    const cards = document.querySelectorAll(".system-card");
+    cards.forEach((card) => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < window.innerHeight - 100) {
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }
+    });
+  });
+</script>
