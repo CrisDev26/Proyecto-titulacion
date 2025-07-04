@@ -8,24 +8,6 @@
   border-right: 1px solid var(--gray-200);
 }
 
-
-.logo {
-  padding: 10px 10px;
-  border-bottom: 1px solid var(--gray-200);
-  display: flex;
-  align-items: center;
-  min-height: 50px; /* Puedes ajustar esto si quieres un área más grande */
-}
-
-.logo img {
-    height: 50px;
-    margin-top: 10px;
-    width: auto;
-    display: block;
-}
-
-
-
 nav ul {
   list-style: none;
   padding: 1rem 0;
