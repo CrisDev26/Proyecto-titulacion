@@ -47,12 +47,37 @@ Luego abre tu navegador en `http://localhost:4200/`. La aplicación se recargar�
 
 ## Estructura principal del proyecto
 
-- `src/app/` — Lógica principal de la aplicación.
-  - `modules/` — Módulos organizados por dominio (admin, auth, usuarios, etc.).
-  - `shared/` — Componentes y recursos compartidos.
-  - `assets/` — Imágenes y recursos estáticos.
-- `angular.json` — Configuración de Angular.
-- `package.json` — Dependencias y scripts del proyecto.
+- `src/app/` — Lógica principal de la aplicación Angular.
+  - `modules/` — Módulos organizados por dominio funcional. Cada módulo agrupa componentes, servicios, rutas e interfaces relacionados con una funcionalidad específica.
+    - Ejemplo: `admin/`, `auth/`, `usuarios/`, `home/`, etc.
+    - Cada módulo puede tener:
+      - `components/` — Componentes visuales reutilizables.
+      - `pages/` — Páginas principales de cada módulo.
+      - `services/` — Servicios para la lógica de negocio y comunicación con APIs.
+      - `interfaces/` — Definiciones de tipos e interfaces TypeScript.
+      - `routes/` — Definición de rutas internas del módulo.
+      - `layout/` — Componentes de layout para la estructura visual del módulo.
+  - `shared/` — Componentes, servicios y recursos compartidos entre varios módulos (por ejemplo, navbar, sidebar, helpers, pipes, etc.).
+  - `assets/` — Imágenes, íconos y recursos estáticos utilizados en la aplicación.
+- `src/index.html` — Archivo HTML principal donde se monta la aplicación Angular.
+- `src/main.ts` — Punto de entrada de la aplicación, inicializa el módulo principal.
+- `src/styles.css` — Estilos globales de la aplicación.
+- `angular.json` — Configuración de Angular CLI (build, assets, estilos, etc.).
+- `package.json` — Dependencias, scripts y metadatos del proyecto.
+
+### Comunicación y flujo de la aplicación
+
+- El archivo `main.ts` arranca la aplicación y monta el componente raíz (`AppComponent`).
+- `AppComponent` define la estructura base y contiene el router outlet para cargar las páginas según la ruta.
+- El enrutamiento principal (`app.routes.ts`) distribuye la navegación hacia los diferentes módulos (por ejemplo, `/auth`, `/admin`, `/usuarios`).
+- Cada módulo tiene su propio archivo de rutas y puede cargar componentes o páginas específicas según la URL.
+- Los componentes se comunican entre sí mediante:
+  - Inputs/Outputs (para comunicación padre-hijo)
+  - Servicios inyectados (para compartir datos y lógica entre componentes)
+- Los servicios gestionan la lógica de negocio y la comunicación con APIs o almacenamiento local.
+- Los módulos compartidos (`shared/`) permiten reutilizar componentes y servicios en toda la aplicación.
+
+Esta estructura modular facilita el mantenimiento, escalabilidad y reutilización del código en el proyecto.
 
 ## Generación de código (Scaffolding)
 
