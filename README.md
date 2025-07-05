@@ -74,6 +74,16 @@ src/
 ├── index.html          # HTML principal
 ├── main.ts             # Punto de entrada de la app
 ├── styles.css          # Estilos globales
+│
+├── backend/            # Backend Node.js/Express
+│   ├── app.js          # Archivo principal del backend
+│   ├── db.js           # Configuración de la base de datos
+│   ├── models/         # Modelos Sequelize (ej: user.js)
+│   └── routes/         # Rutas de la API (ej: users.js)
+│
+├── angular.json        # Configuración Angular CLI
+├── package.json        # Dependencias y scripts del frontend
+
 ```
 
 - `angular.json` — Configuración de Angular CLI (build, assets, estilos, etc.)
