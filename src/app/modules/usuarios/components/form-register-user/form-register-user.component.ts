@@ -34,6 +34,8 @@ export class FormRegisterUserComponent {
       telefono: ['', [Validators.required]],
       tipo_contrato: ['', [Validators.required]],
       dedicacion: ['', [Validators.required]],
+      password: ['', Validators.required],   // <-- NUEVO
+      rol: ['', Validators.required],  
       estado: ['', [Validators.required]],
     });
   }

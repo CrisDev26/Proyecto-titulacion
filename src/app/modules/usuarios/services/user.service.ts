@@ -15,8 +15,8 @@ export class UserService {
       tipo_contrato: '',
       dedicacion: '',
       estado: 'Activo',
-      // contraseña: '',
-      // fecha_creacion: new Date(2025, 0, 1),
+      password: '1234',
+      rol: 'docente',
     },
     {
       cedula: '0607080910',
@@ -27,8 +27,8 @@ export class UserService {
       tipo_contrato: '',
       dedicacion: '',
       estado: 'Activo',
-      // contraseña: '',
-      // fecha_creacion: new Date(2025, 0, 1),
+      password: '1234',         // <--- AGREGADO
+      rol: 'docente',  
     },
     {
       cedula: '1101121314',
@@ -39,8 +39,8 @@ export class UserService {
       tipo_contrato: 'Medio tiempo',
       dedicacion: 'AUX1',
       estado: 'Activo',
-      // contraseña: '',
-      // fecha_creacion: new Date(2025, 0, 1),
+      password: '1234',         // <--- AGREGADO
+      rol: 'docente',  
     },
   ];
 
@@ -60,7 +60,7 @@ export class UserService {
     return [...this.usuarios];
   }
 
-  deleteUser(cedula: string): void {
-    this.usuarios = this.usuarios.filter((user) => user.cedula !== cedula);
-  }
+ deleteUser(cedula: string): void {
+  this.usuarios = this.usuarios.filter((user) => user.cedula !== cedula);
+ }
 }
