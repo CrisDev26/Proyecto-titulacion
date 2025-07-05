@@ -85,6 +85,36 @@
         />
       </div>
 
+      <!-- Rol de Usuario -->
+        <div class="mb-3">
+          <label for="rol" class="form-label">Rol</label>
+          <select
+            id="rol"
+            class="form-select"
+            formControlName="rol"
+            required
+          >
+            <option value="" disabled selected>Seleccione un rol</option>
+            <option value="docente">Docente</option>
+            <option value="alumno">Alumno</option>
+            <option value="admin">Administrador</option>
+            <!-- Agrega los roles que necesites -->
+          </select>
+        </div>
+
+
+         <!-- Contraseña de usuario -->
+          <div class="mb-3">
+          <label for="password">Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            formControlName="password"
+            required
+          />
+        </div>
+
       <!-- Estado -->
       <div class="mb-3">
         <label for="estado" class="form-label">Estado</label>

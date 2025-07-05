@@ -159,3 +159,86 @@ Angular CLI no incluye un framework e2e por defecto, puedes elegir el que mejor 
 
 ---
 
+## 🗄️ Backend Node.js/Express
+
+### Instalación de dependencias backend
+
+1. Entra a la carpeta `backend`:
+   ```bash
+   cd backend
+   ```
+2. Instala las dependencias necesarias:
+   ```bash
+   npm install express sequelize pg pg-hstore cors
+   ```
+
+### Levantar el servidor backend
+
+1. Desde la carpeta `backend`, ejecuta:
+   ```bash
+   node app.js
+   ```
+   Verás en consola:
+   ```
+   Servidor backend en http://localhost:3000
+   Conexión a PostgreSQL OK
+   ```
+
+### Configuración de la base de datos PostgreSQL
+
+- Debes tener PostgreSQL instalado y corriendo en tu máquina.
+- Crea una base de datos llamada `titulaciondb`.
+- El usuario y contraseña por defecto en la conexión son:
+  - **Usuario:** postgres
+  - **Contraseña:** cristhyan2612
+  - **Host:** localhost
+  - **Puerto:** 5432
+
+Puedes cambiar estos valores en el archivo `backend/db.js`:
+```js
+const sequelize = new Sequelize('titulaciondb', 'postgres', 'cristhyan2612', {
+  host: 'localhost',
+  dialect: 'postgres',
+});
+```
+
+- La tabla principal debe llamarse `usuarios` y tener los siguientes campos:
+  - id (opcional, autoincremental)
+  - cedula (PK, string)
+  - nombres (string)
+  - apellidos (string)
+  - email (string, único)
+  - telefono (string)
+  - tipo_contrato (string)
+  - dedicacion (string)
+  - estado (string)
+  - password (string)
+  - rol (string)
+
+Puedes crear la tabla con una consulta SQL como:
+```sql
+CREATE TABLE usuarios (
+  id SERIAL PRIMARY KEY,
+  cedula VARCHAR(20) UNIQUE NOT NULL,
+  nombres VARCHAR(100) NOT NULL,
+  apellidos VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  telefono VARCHAR(20),
+  tipo_contrato VARCHAR(50),
+  dedicacion VARCHAR(50),
+  estado VARCHAR(20),
+  password VARCHAR(100),
+  rol VARCHAR(50)
+);
+```
+
+---
+
+## 🔗 Comunicación Frontend-Backend
+
+- El frontend (Angular) corre en `http://localhost:4200`.
+- El backend (Node.js/Express) corre en `http://localhost:3000`.
+- El backend tiene habilitado CORS para permitir la comunicación entre ambos entornos.
+
+---
+

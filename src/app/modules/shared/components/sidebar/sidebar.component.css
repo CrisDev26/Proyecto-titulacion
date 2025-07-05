@@ -4,25 +4,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-right: 1px solid var(--gray-200);
-}
-
-.logo {
-  padding: 1.5rem 1rem;
-  font-weight: 800;
-  font-size: 1.2rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  border-bottom: 1px solid var(--gray-200);
-  color: var(--primary);
-}
-
-.logo i {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
 }
 
 nav ul {

@@ -1,66 +1,29 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  usuarios: User[] = [
-    {
-      cedula: '0102030405',
-      nombres: 'Juan Carlos',
-      apellidos: 'Pérez López',
-      email: 'juan.perez@example.com',
-      telefono: '0991234567',
-      tipo_contrato: '',
-      dedicacion: '',
-      estado: 'Activo',
-      // contraseña: '',
-      // fecha_creacion: new Date(2025, 0, 1),
-    },
-    {
-      cedula: '0607080910',
-      nombres: 'María Fernanda',
-      apellidos: 'Gómez Sánchez',
-      email: 'maria.gomez@example.com',
-      telefono: '0987654321',
-      tipo_contrato: '',
-      dedicacion: '',
-      estado: 'Activo',
-      // contraseña: '',
-      // fecha_creacion: new Date(2025, 0, 1),
-    },
-    {
-      cedula: '1101121314',
-      nombres: 'Luis Alberto',
-      apellidos: 'Ramírez Torres',
-      email: 'luis.ramirez@example.com',
-      telefono: '0976543210',
-      tipo_contrato: 'Medio tiempo',
-      dedicacion: 'AUX1',
-      estado: 'Activo',
-      // contraseña: '',
-      // fecha_creacion: new Date(2025, 0, 1),
-    },
-  ];
+  private apiUrl = 'http://localhost:3000/api/usuarios';
 
-  saveUser(newUser: User): void {
-    this.usuarios = [...this.usuarios, newUser];
+  constructor(private http: HttpClient) {}
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl);
   }
 
-  editUser(usuarioEditado: User): void {
-    this.usuarios = this.usuarios.map((user) =>
-      user.cedula === usuarioEditado.cedula
-        ? { ...user, ...usuarioEditado }
-        : user
-    );
+  saveUser(newUser: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, newUser);
   }
 
-  get getUsers(): User[] {
-    return [...this.usuarios];
+  editUser(usuarioEditado: User): Observable<User> {
+    return this.http.put<User>(`${this.apiUrl}/${usuarioEditado.cedula}`, usuarioEditado);
   }
 
-  deleteUser(cedula: string): void {
-    this.usuarios = this.usuarios.filter((user) => user.cedula !== cedula);
+  deleteUser(cedula: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${cedula}`);
   }
 }

@@ -6,7 +6,8 @@ export interface User {
   telefono: string;
   tipo_contrato: string;
   dedicacion: string;
-  // contraseña: string;
   estado: string;
-  // fecha_creacion: Date;
+  password: string;   // <--- Contraseña
+  rol: string;        // <--- Rol del usuario (docente, alumno, admin, etc.)
+
 }
