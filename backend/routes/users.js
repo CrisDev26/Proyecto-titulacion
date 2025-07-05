@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
 // POST: Crear usuario
 router.post('/', async (req, res) => {
   try {
+    console.log('Datos recibidos en POST /api/usuarios:', req.body); // Log para depuración
     const nuevoUsuario = await User.create(req.body);
     res.status(201).json(nuevoUsuario);
   } catch (err) {
